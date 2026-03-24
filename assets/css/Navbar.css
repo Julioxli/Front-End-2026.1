@@ -1,0 +1,47 @@
+.nav-links, li, a, button {
+    font-size: 18px;
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 15px;
+    background-color: rgb(85, 11, 55);
+}
+
+.logo{
+    color: rgb(255, 255, 255);
+    font-size: 35px;
+    font-weight: bold;
+}
+
+.nav-links, li {
+    list-style: none;
+    display: inline-block;
+    padding: 0px 20px;
+}
+
+.nav-links li a:hover {
+    color: rgb(0, 0, 0);
+}
+
+button {
+    padding: 10px 20px;
+    background-color: aqua;
+    border: none;
+    border-radius: 60px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: pink;
+}
+
+@media (max-width: 800px) {
+    li, a, button {
+        font-size: 12px;
+    }
+}
