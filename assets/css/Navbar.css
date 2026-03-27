@@ -1,47 +1,68 @@
-.nav-links, li, a, button {
-    font-size: 18px;
-    color: rgb(255, 255, 255);
-    text-decoration: none;
-}
-
-header {
+nav {
+    width: 100%;
+    padding: 16px 5px; /* Caso de erro de resposividade colocar 1rem, pois vi que 1rem é igual a 16px */
+    background: #17364f;
+    border-bottom: 1px solid #0d1a2f;
+    backdrop-filter: red(15px);
+    margin-bottom: 1rem;
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    padding: 20px 15px;
-    background-color: rgb(85, 11, 55);
+    justify-content: space-between;
+}  
+
+.navgroups  {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
 }
 
-.logo{
-    color: rgb(255, 255, 255);
-    font-size: 35px;
-    font-weight: bold;
+.logo {
+    color: #fff;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #09d8c7;
+    letter-spacing: 1px;
+    margin: auto;
 }
 
-.nav-links, li {
+.nav_links, ul {
     list-style: none;
-    display: inline-block;
-    padding: 0px 20px;
+    display: flex;
+    gap: 2rem;
+    margin: auto;
 }
 
-.nav-links li a:hover {
-    color: rgb(0, 0, 0);
+.nav_links, li a {
+    position: relative;
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.05rem;
+    font-weight: 500;
+    transition: color 0.3s ease;
 }
 
-button {
-    padding: 10px 20px;
-    background-color: aqua;
+.nav_links, li a:hover {
+    color: #09d8c7;
+    text-shadow: 0 0 10px #09d8c7;
+}
+
+.btns {
+    display: flex;
+}
+
+.btn_login {
+    padding: 0.5rem 1.5rem;
+    border-radius: 30px;
+    font-weight: 600;
+    font-size: 1rem;
+    box-shadow: 0 0 15px #09d8c7;
     border: none;
-    border-radius: 60px;
     cursor: pointer;
+    transition: 0.3s;
 }
 
-button:hover {
-    background-color: pink;
-}
-
-@media (max-width: 800px) {
-    li, a, button {
-        font-size: 12px;
-    }
+.btn_login:hover {
+    background-color: #09d8c7;
+    color: #17364f;
+    box-shadow: 0 0 20px #09d8c7;
 }
