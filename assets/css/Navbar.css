@@ -1,4 +1,4 @@
-nav {
+.nav-bar {
     width: 100%;
     padding: 16px 5px; /* Caso de erro de resposividade colocar 1rem, pois vi que 1rem é igual a 16px */
     background: #17364f;
@@ -6,15 +6,11 @@ nav {
     backdrop-filter: red(15px);
     margin-bottom: 1rem;
     display: flex;
+    gap: 2rem;
     align-items: center;
     justify-content: space-between;
 }  
 
-.navgroups  {
-    display: flex;
-    align-items: center;
-    gap: 2rem;
-}
 
 .logo {
     color: #fff;
@@ -25,14 +21,14 @@ nav {
     margin: auto;
 }
 
-.nav_links, ul {
+.nav-list {
     list-style: none;
     display: flex;
     gap: 2rem;
     margin: auto;
 }
 
-.nav_links, li a {
+.nav-list .nav-links .nav-link{
     position: relative;
     color: #fff;
     text-decoration: none;
@@ -41,7 +37,7 @@ nav {
     transition: color 0.3s ease;
 }
 
-.nav_links, li a:hover {
+.nav-list .nav-links .nav-link:hover {
     color: #09d8c7;
     text-shadow: 0 0 10px #09d8c7;
 }
