@@ -3,23 +3,69 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sign </title>
-    <link rel="stylesheet" href="../css/Global.css">
-    <link rel="stylesheet" href="../css/Navbar.css">
+    <link rel="stylesheet" href="assets/css/Global.css">
+    <link rel="stylesheet" href="assets/css/Navbar.css">
+    <link rel="stylesheet" href="assets/css/Footer.css">
+    <script src="https://kit.fontawesome.com/c4254e24a8.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
     <!--NAVBAR-->
-    <nav>
-      <div class="logo">CSSnippets</div>
-      <ul class="nav-links">
-        <li><a href="\Index.html">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#services">Services</a></li>
-        <li><a href="#contact">Contact</a></li>
+    <nav class="nav-bar">
+      <div class="logo">Baratex</div>
+      <ul class="nav-list">
+        <li class="nav-links"><a class="nav-link" href="\Index.html">Home</a></li>
+        <li class="nav-links"><a class="nav-link" href="#about">About</a></li>
+        <li class="nav-links"><a class="nav-link" href="#services">Services</a></li>
+        <li class="nav-links"><a class="nav-link" href="#contact">Contact</a></li>
       </ul>
       <div class="btns_navbar">
         <a href="assets\pages\login.html"><button class="btn_login">Login</button></a>
       </div>
     </nav>
+
+    <!--FOOTER-->
+    <footer>
+      <div class="footer-row">
+        <div class="footer-col">
+          <img src="assets/img/logo.png" alt="Logo do Baratex" class="footer-logo">
+          <p>O Baratex é uma plataforma de comparação de preços que ajuda os consumidores a encontrar as melhores ofertas em uma variedade de produtos. Com uma interface fácil de usar, o Baratex permite que os usuários pesquisem e comparem preços de diferentes lojas online, economizando tempo e dinheiro.</p>
+        </div>
+        <div class="footer-col">
+          <h3>Office <div class="footer-topic"><span class="topic-span"></span></div></h3>
+          <p>Rio de Janeiro - RJ</p>
+          <p>Av. Paris, 84 - Bonsucesso</p>
+          <p>Cep: 21041-020</p>
+          <p class="footer-email">Email: contato@baratex.com</p>
+          <h3>Telefone: (21) 3882-9797</h3>
+        </div>
+        <div class="footer-col">
+          <h3>Links Úteis <div class="footer-topic"><span class="topic-span"></span></div></h3>
+          <ul>
+            <li><a href="\Index.html">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#contact">Features</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h3>Email <div class="footer-topic"><span class="topic-span"></span></div></h3>
+          <form class="footer-form">
+            <i class="fa-regular fa-envelope"></i>
+            <input type="email" placeholder="Digite seu email para receber novidades" class="footer-input" required>
+            <button type="submit"><i class="fa-solid fa-arrow-right"></i></i></button>
+          </form>
+        </div>
+          <div class="footer-social-icons">
+            <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#"><i class="fa-brands fa-twitter"></i></a>
+            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+        </div>
+      </div>
+      <hr class="footer-hr">
+        <p class="footer-copyright">© 2024 Baratex. Todos os direitos reservados.</p>
+    </footer>  
 </body>
 </html>
