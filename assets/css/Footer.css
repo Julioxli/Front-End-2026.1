@@ -2,15 +2,17 @@ footer {
     background: #17364f;
     width: 100%;
     position: absolute;
+    margin: 0;
     bottom: 0;
     background: linear-gradient(to right, #17364f, #bd0927);
     color: #fff;
-    padding: 100px 0 30px;
+    padding: 10px 2px 20px;
     border-top-left-radius: 125px;
     border-top-right-radius: 125px;
     font-weight: 13px;
     line-height: 20px;
 }
+
 
 .footer-row {
     width: 85%;
