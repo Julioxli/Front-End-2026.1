@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="..\css/Global.css">
+    <link rel="stylesheet" href="..\css/Navbar.css">
+    <link rel="stylesheet" href="..\css\Login.css">
+    <link rel="stylesheet" href="..\css\Footer.css"> 
+    <!-- <script src="https://kit.fontawesome.com/c4254e24a8.js" crossorigin="anonymous"></script> -->
+    <!-- <script src="..\JS\Forms.js"></script> -->
+    <title>Login - Baratex</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+    <!--NAVBAR-->
+    <nav class="nav-bar">
+      <div class="logo">JPL</div>
+      <ul class="nav-list">
+        <li class="nav-links"><a class="nav-link" href="\Index.html">Home</a></li>
+        <li class="nav-links"><a class="nav-link" href="#about">Sobre</a></li>
+        <li class="nav-links"><a class="nav-link" href="#services">Serviços</a></li>
+        <li class="nav-links"><a class="nav-link" href="#contact">Contato</a></li>
+      </ul>
+      <div class="btns_navbar">
+        <a href="assets\pages\login.html"><button class="btn_login">Login</button></a>
+      </div>
+    </nav>
+
+    <!--LOGIN & Sigin FORM-->
+    <div class="body-sl">
+    <div class="sl-container" id="sl-container">
+      
+      
+
+      <!--Login-->
+      <div class="form-box-login">
+        <form action="" class="form-login">
+          <h1>LOGIN</h1>
+          <div class="input-box">
+            <input type="text" placeholder="Nome de usuário" required>
+            <i class="fa-solid fa-user"></i>
+          </div>
+          <div class="input-box">
+            <input type="password" id="senha" placeholder="Senha" required>
+            <i class="fa-solid fa-lock"></i>
+          </div>
+          <div class="forgot-link">
+            <a href="#">Esqueceu sua senha?</a>
+          </div>
+          <button type="submit" class="btn-form-login">Login</button>
+          <p>Ou continue com outras plataformas:</p>
+          <div class="form-login-social-icos">
+            <a href="#"><i class="fa-brands fa-google"></i></a>
+            <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#"><i class="fa-brands fa-twitter"></i></a>
+            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+          </div>
+        </form>
+      </div>      
+
+      
+
+      <!--Register-->
+      <div class="form-box-login register">
+        <form action="" class="form-login">
+          <h1>CADASTRE-SE</h1>
+          <div class="input-box">
+            <input type="text" placeholder="Nome de usuário" required>
+            <i class="fa-solid fa-user"></i>
+          </div>
+          <div class="input-box">
+            <input type="email" placeholder="Email" required>
+            <i class="fa-solid fa-envelope"></i>
+          </div>
+          <div class="input-box">
+            <input type="password" placeholder="Senha" required minlength="8" pattern="">
+            <i class="fa-solid fa-lock"></i>
+          </div>
+          <button type="submit" class="btn-form-login">Cadastrar</button>
+          <p>Ou registre-se com outras plataformas</p>
+          <div class="form-login-social-icos">
+            <a href="#"><i class="fa-brands fa-google"></i></a>
+            <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#"><i class="fa-brands fa-twitter"></i></a>
+            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+          </div>
+        </form>
+      </div> 
+
+      <div class="toggle-box">
+        <div class="toggle-panel toggle-left">
+          <h1>Olá, Seja Bem Vindo!</h1>
+          <p>Não possui uma conta?</p>
+          <button class="btn-register btn-form-login" id="btn-register">Registre-se</button>
+        </div>
+        <div class="toggle-panel toggle-right">
+          <h1>Bem Vindo De Volta!</h1>
+          <p>Já possui uma conta?</p>
+          <button class="btn-login btn-form-login" id="btn-login">Entrar</button>
+        </div>
+      </div> 
+
+
+
+    </div>
+    </div>
+
+
+    <!--FOOTER-->
+    <!-- <footer>
+      <div class="footer-row">
+        <div class="footer-col">
+          <img src="assets/img/logo.png" alt="Logo do Baratex" class="footer-logo">
+          <p>O Baratex é uma plataforma de comparação de preços que ajuda os consumidores a encontrar as melhores ofertas em uma variedade de produtos. Com uma interface fácil de usar, o Baratex permite que os usuários pesquisem e comparem preços de diferentes lojas online, economizando tempo e dinheiro.</p>
+        </div>
+        <div class="footer-col">
+          <h3>Office <div class="footer-topic"><span class="topic-span"></span></div></h3>
+          <p>Rio de Janeiro - RJ</p>
+          <p>Av. Paris, 84 - Bonsucesso</p>
+          <p>Cep: 21041-020</p>
+          <p class="footer-email">Email: contato@baratex.com</p>
+          <h3>Telefone: (21) 3882-9797</h3>
+        </div>
+        <div class="footer-col">
+          <h3>Links Úteis <div class="footer-topic"><span class="topic-span"></span></div></h3>
+          <ul>
+            <li><a href="\Index.html">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#contact">Features</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h3>Email <div class="footer-topic"><span class="topic-span"></span></div></h3>
+          <form class="footer-form">
+            <i class="fa-regular fa-envelope"></i>
+            <input type="email" placeholder="Digite seu email para receber novidades" class="footer-input" required>
+            <button type="submit"><i class="fa-solid fa-arrow-right"></i></i></button>
+          </form>
+        </div>
+          <div class="footer-social-icons">
+            <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#"><i class="fa-brands fa-twitter"></i></a>
+            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+        </div>
+      </div>
+      <hr class="footer-hr">
+        <p class="footer-copyright">© 2024 Baratex. Todos os direitos reservados.</p>
+    </footer>   -->
+
+    </body>
+
+<script src="../JS/Forms.js"></script>
+
+</html>
+</body>
+</html>
