@@ -216,3 +216,17 @@
     background: linear-gradient(90deg, #af09d8, #09d8c7);
 }
 
+.linha-dupla {
+  display: flex;
+  gap: 10px;
+  margin: 10px 0; 
+}
+
+.linha-dupla .input-box {
+  width: 50%;
+  margin: 0; 
+}
+
+.linha-dupla input {
+  font-size: 14px;
+}
