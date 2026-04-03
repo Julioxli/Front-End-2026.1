@@ -38,11 +38,11 @@
         <form action="" class="form-login">
           <h1>LOGIN</h1>
           <div class="input-box">
-            <input type="text" placeholder="Nome de usuário" required>
+            <input type="text" id="Login_usuario" placeholder="Nome de usuário" required>
             <i class="fa-solid fa-user"></i>
           </div>
           <div class="input-box">
-            <input type="password" id="senha" placeholder="Senha" required>
+            <input type="password" id="Login_senha" placeholder="Senha" required>
             <i class="fa-solid fa-lock"></i>
           </div>
           <div class="forgot-link">
@@ -56,33 +56,36 @@
 
       <!--Register-->
       <div class="form-box register">
-        <form action="" class="form-login">
+        <form action="" id="form-registro" class="form-registro">
           <h1>CADASTRE-SE</h1>
           <div class="input-box">
-            <input type="text" placeholder="Nome de usuário" required>
+            <input type="text" id="registro-usuario" placeholder="Nome de usuário" required>
             <i class="fa-solid fa-user"></i>
           </div>
           <div class="input-box">
-            <input type="email" placeholder="Email" required>
+            <input type="email" id="registro-email" placeholder="Email" required>
             <i class="fa-solid fa-envelope"></i>
           </div>
-          <div class="input-box">
-            <input type="text" placeholder="CPF" required>
-            <i class="fa-solid fa-id-card"></i>
+          <div class="linha-dupla">
+            <div class="input-box">
+              <input type="text" id="registro-cpf" placeholder="CPF" required>
+              <i class="fa-solid fa-id-card"></i>
+            </div>
+            <div class="input-box">
+              <input type="text" id="registro-cep" placeholder="CEP"  required>
+              <i class="fa-solid fa-location-crosshairs"></i>
+              
+            </div>
           </div>
           <div class="input-box">
-            <input type="text" placeholder="CEP" required>
-            <i class="fa-solid fa-location-crosshairs"></i>
-          </div>
-          <div class="input-box">
-            <input type="password" placeholder="Senha" required minlength="8" pattern="">
+            <input type="password" id="registro-senha"  placeholder="Senha" required minlength="8" pattern="">
             <i class="fa-solid fa-lock"></i>
           </div>
           <div class="input-box">
-            <input type="password" placeholder="Confirmar Senha" required minlength="8" pattern="">
+            <input type="password" id="registro-conf-senha" placeholder="Confirmar Senha" required minlength="8" pattern="">
             <i class="fa-solid fa-lock"></i>
           </div>
-          <button type="submit" class="btn-form">Cadastrar</button>
+          <button type="submit" id="btn-registro" class="btn-form">Cadastrar</button>
         </form>
       </div> 
 
@@ -106,10 +109,8 @@
 
 
 
-    </body>
-
 <script src="../JS/Forms.js"></script>
 
-</html>
+
 </body>
 </html>
