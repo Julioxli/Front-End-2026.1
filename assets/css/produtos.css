@@ -1,0 +1,22 @@
+* {
+
+    
+}
+
+
+.Produtos {
+    background-color: aqua;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    
+}
+
+.card-produto {
+    background: violet;
+    margin: 0.7rem 0.7rem 0.7rem 0.7rem;
+    display: flex;
+    flex-direction: column;
+
+}
