@@ -1,26 +1,141 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-       <link rel="stylesheet" href="assets/css/login.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
-    <link rel="stylesheet" href="../css/Global.css">
-    <link rel="stylesheet" href="../css/Navbar.css">
-</head>
-<body>
-    <!--NAVBAR-->
-    <nav>
-      <div class="logo">CSSnippets</div>
-      <ul class="nav-links">
-        <li><a href="\Index.html">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#services">Services</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-      <div class="btns_navbar">
-        <a href="assets\pages\login.html"><button class="btn_login">Login</button></a>
+  <!DOCTYPE html>
+  <html lang="pt-br">
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="stylesheet" href="..\css/Global.css">
+      <link rel="stylesheet" href="..\css/Navbar.css">
+      <link rel="stylesheet" href="..\css\Login.css">
+      <link rel="stylesheet" href="..\css\Footer.css"> 
+      <!-- <script src="https://kit.fontawesome.com/c4254e24a8.js" crossorigin="anonymous"></script> -->
+      <!-- <script src="..\JS\Forms.js"></script> -->
+      <title>Login - JPL</title>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  </head>
+  <body>
+      <!--NAVBAR-->
+      <nav class="nav-bar">
+        <div class="logo">JPL</div>
+        <ul class="nav-list">
+          <li class="nav-links"><a class="nav-link" href="\Index.html">Home</a></li>
+          <li class="nav-links"><a class="nav-link" href="#about">About</a></li>
+          <li class="nav-links"><a class="nav-link" href="#services">Services</a></li>
+          <li class="nav-links"><a class="nav-link" href="#contact">Contact</a></li>
+        </ul>
+        <div class="btns_navbar">
+          <a href="assets\pages\login.html"><button class="btn_login">Login</button></a>
+        </div>
+      </nav>
+
+      <!--LOGIN & Sigin FORM-->
+      <div class="body-sl">
+      <div class="sl-container" id="sl-container">
+        
+        
+
+        <!--Login-->
+        <div class="form-box">
+          <form action="" id="form-login" class="form-login">
+            <h1>LOGIN</h1>
+            <div class="input-box">
+              <input type="text" id="Login-usuario" placeholder="Nome de usuário" required>
+              <i class="fa-solid fa-user"></i>
+            </div>
+            <div class="input-box">
+              <input type="password" id="Login-senha" placeholder="Senha" required>
+              <i class="fa-solid fa-lock"></i>
+            </div>
+            <div class="forgot-link">
+              <a href="#">Esqueceu sua senha?</a>
+            </div>
+            <button type="submit" class="btn-form">Login</button>
+          </form>
+        </div>      
+
+        
+
+    <!--Register-->
+  <div class="form-box register">
+    <form action="" id="form-registro" class="form-registro" novalidate>
+      <h1>CADASTRE-SE</h1>
+
+      <div class="input-box">
+        <label for="registro-usuario" class="sr-only">Nome de usuário</label>
+        <input type="text" id="registro-usuario" placeholder="Nome de usuário" required>
+        <i class="fa-solid fa-user"></i>
       </div>
-    </nav>
-</body>
-</html>
+
+      <div class="input-box">
+        <label for="registro-email" class="sr-only">Email</label>
+        <input type="email" id="registro-email" placeholder="Email" required>
+        <i class="fa-solid fa-envelope"></i>
+      </div>
+
+      <div class="linha-dupla">
+        <div class="input-box">
+          <label for="registro-cpf" class="sr-only">CPF</label>
+          <input type="text" id="registro-cpf" placeholder="CPF" required>
+          <i class="fa-solid fa-id-card"></i>
+        </div>
+
+        <div class="input-box">
+          <label for="registro-cep" class="sr-only">CEP</label>
+          <input type="text" id="registro-cep" placeholder="CEP" required>
+          <i class="fa-solid fa-location-crosshairs"></i>
+        </div>
+      </div>
+
+      <div class="input-box">
+        <label for="registro-senha" class="sr-only">Senha</label>
+        <input type="password" id="registro-senha" placeholder="Senha" required minlength="8">
+        <i class="fa-solid fa-lock"></i>
+      </div>
+
+      <div class="input-box">
+        <label for="registro-conf-senha" class="sr-only">Confirmar senha</label>
+        <input type="password" id="registro-conf-senha" placeholder="Confirmar Senha" required minlength="8">
+        <i class="fa-solid fa-lock"></i>
+      </div>
+
+      <button type="submit" id="btn-registro" class="btn-form">Cadastrar</button>
+    </form>
+  </div>
+
+        <div class="toggle-box">
+          <div class="toggle-panel toggle-left">
+            <h1>Olá, Seja Bem Vindo!</h1>
+            <p>Não possui uma conta?</p>
+            <button class="btn-register btn-form" id="btn-register">Registre-se</button>
+          </div>
+          <div class="toggle-panel toggle-right">
+            <h1>Bem Vindo De Volta!</h1>
+            <p>Já possui uma conta?</p>
+            <button class="btn-login btn-form" id="btn-login">Entrar</button>
+          </div>
+        </div> 
+
+
+
+      </div>
+      </div>
+
+        <div id="modal-cep" class="modal">
+        <div class="modal-content">
+          <h2>Confirmar Endereço</h2>
+
+   
+          
+          <div id="resultado-endereco"></div>
+
+          <button id="btn-confirmar">Confirmar</button>
+          <button id="btn-fechar">Corrigir</button>
+        </div>
+      </div>
+
+
+
+  <script src="../JS/Forms.js"></script>
+
+
+  </body>
+  </html>

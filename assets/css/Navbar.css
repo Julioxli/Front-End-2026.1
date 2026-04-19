@@ -1,10 +1,10 @@
 .nav-bar {
     width: 100%;
-    padding: 16px 5px; /* Caso de erro de resposividade colocar 1rem, pois vi que 1rem é igual a 16px */
-    background: #17364f;
-    border-bottom: 1px solid #0d1a2f;
+    padding: 16px 5px; 
+    background: #000000;
+    border-bottom: 1px solid #19002e;
     backdrop-filter: red(15px);
-    margin-bottom: 1rem;
+    margin-bottom: 0;
     display: flex;
     gap: 2rem;
     align-items: center;
@@ -16,7 +16,7 @@
     color: #fff;
     font-size: 1.8rem;
     font-weight: 700;
-    color: #09d8c7;
+    color: #ffe600;
     letter-spacing: 1px;
     margin: auto;
 }
@@ -38,8 +38,24 @@
 }
 
 .nav-list .nav-links .nav-link:hover {
-    color: #09d8c7;
-    text-shadow: 0 0 10px #09d8c7;
+    color: #ffe600;
+    text-shadow: 0 0 10px #ffed4a;
+}
+
+.nav-list .nav-links .nav-link::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    left: 0;
+    bottom: 0px;
+    background-color: #ffe600;
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+.nav-list .nav-links .nav-link:hover::after {
+    transform: scaleX(1);
 }
 
 .btns {
@@ -48,17 +64,18 @@
 
 .btn_login {
     padding: 0.5rem 1.5rem;
+    font: #fff;
     border-radius: 30px;
     font-weight: 600;
     font-size: 1rem;
-    box-shadow: 0 0 15px #09d8c7;
+    box-shadow: 0 0 15px #ffe600;
     border: none;
     cursor: pointer;
     transition: 0.3s;
 }
 
 .btn_login:hover {
-    background-color: #09d8c7;
-    color: #17364f;
-    box-shadow: 0 0 20px #09d8c7;
-}
+    background-color: #ffe600;
+    color: #000000;
+    box-shadow: 0 0 20px #ffe600;
+} 
