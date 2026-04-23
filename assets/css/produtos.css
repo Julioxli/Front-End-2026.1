@@ -1,22 +1,37 @@
-* {
-
-    
-}
-
 
 .Produtos {
-    background-color: aqua;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-between;
-    
+    height: 95vh;
+    color: #ffffff;
+    margin-top: 20px;
 }
 
 .card-produto {
-    background: violet;
+    width: 300px;
+    background:linear-gradient(to bottom, #d8c309, #ffe600);
     margin: 0.7rem 0.7rem 0.7rem 0.7rem;
     display: flex;
     flex-direction: column;
 
+}
+
+.card-produto:hover {
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+  transform: translateY(-5px) scale(1.02);
+  transition: all 0.3s ease;
+}
+
+.card-produto {
+    border-radius: 15px;
+    border: 0px solid #ffffff;
+    padding: 16px;
+}
+
+.card-produto img {
+    width: 100%;
+    height: auto;
+    border-radius: 15px;
 }
