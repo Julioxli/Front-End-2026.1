@@ -249,8 +249,10 @@ formLogin.addEventListener('submit', function(e) {
     if (usuarioEncontrado) {
         alert('Login realizado com sucesso ');
 
-        window.location.href = "https://youtu.be/dQw4w9WgXcQ?si=LN8awtC4Uwa-HBo5"
-
+        
+        // Redireciona para a página inicial
+        window.location.href = "/";
+        
         localStorage.setItem('usuarioLogado', JSON.stringify(usuarioEncontrado));
 
     } else {
@@ -261,3 +263,15 @@ formLogin.addEventListener('submit', function(e) {
 
 
 })
+
+
+// const icone = document.getElementById("icone");
+// const lista = document.getElementById("listaCarrinho");
+
+//     icone.addEventListener("click", () => {
+//       if (lista.style.display === "none") {
+//         lista.style.display = "block";
+//       } else {
+//         lista.style.display = "none";
+//       }
+//     });

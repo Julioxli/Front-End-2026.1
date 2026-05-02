@@ -1,9 +1,7 @@
 footer {
     background: #17364f;
     width: 100%;
-    position: absolute;
-    margin: 0;
-    bottom: 0;
+    margin-top: 90vh;
     background: linear-gradient(to right, #17364f, #cab814);
     color: #fff;
     padding: 5px 1px 10px;
@@ -11,9 +9,6 @@ footer {
     border-top-right-radius: 125px;
     font-weight: 13px;
     line-height: 20px;
-    position: relative;
-    bottom: 0;
-    margin-top: 30PX;
 }
 
 
