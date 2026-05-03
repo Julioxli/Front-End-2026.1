@@ -164,3 +164,28 @@ button{
 button:hover{
     background-color: #333;
 }
+
+#listaCarrinho {
+  display: none;
+}
+
+#listaCarrinho.ativo {
+  display: block;
+}
+
+
+.cart  {
+    display: none;
+}
+
+.cart.ativo {
+  display: block;
+}
+
+/* #btns_login {
+    display: block;
+}
+
+#btns_login.ativo {
+  display: none;
+} */

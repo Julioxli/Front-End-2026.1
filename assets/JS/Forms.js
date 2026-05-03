@@ -23,11 +23,18 @@ const btnFechar = document.getElementById('btn-fechar');
 const btnConfirmar = document.getElementById('btn-confirmar');
 
 
+//Carrinho
+const listabtns_login = document.getElementById("btns_login");
+
+
+
+
 
 
 const admin = {
     usuario: "admin",
     senha: "12345678",
+    email: "admin@example.com",
     admin: true
 };
 
@@ -216,7 +223,7 @@ function validarFormulario(e) {
 
     localStorage.setItem('usuarios', JSON.stringify(usuarios));
 
-    alert('Você foi cadastrado');
+    console.log('Você foi cadastrado');
 
     form.reset();
 
@@ -234,7 +241,7 @@ formLogin.addEventListener('submit', function(e) {
 
     let usuarios = JSON.parse(localStorage.getItem('usuarios')) || [];
 
-    if (usuarioLogin === admin.usuario && senhaLogin === admin.senha) {
+    if (usuarioLogin === admin.email && senhaLogin === admin.senha) {
 
     localStorage.setItem('usuarioLogado', JSON.stringify(admin));
 
@@ -243,21 +250,21 @@ formLogin.addEventListener('submit', function(e) {
     }
 
     const usuarioEncontrado = usuarios.find(user => 
-        user.usuario === usuarioLogin && user.senha === senhaLogin
+        user.email === usuarioLogin && user.senha === senhaLogin
     );
 
     if (usuarioEncontrado) {
-        alert('Login realizado com sucesso ');
-
-        
+        console.log('Login realizado com sucesso ');    
         // Redireciona para a página inicial
         window.location.href = "/";
+
         
         localStorage.setItem('usuarioLogado', JSON.stringify(usuarioEncontrado));
 
     } else {
-        alert('Usuário ou senha incorretos');
-    }
+        console.log('Usuário ou senha incorretos');
+    };
+
 });
 
 
@@ -265,13 +272,3 @@ formLogin.addEventListener('submit', function(e) {
 })
 
 
-// const icone = document.getElementById("icone");
-// const lista = document.getElementById("listaCarrinho");
-
-//     icone.addEventListener("click", () => {
-//       if (lista.style.display === "none") {
-//         lista.style.display = "block";
-//       } else {
-//         lista.style.display = "none";
-//       }
-//     });
