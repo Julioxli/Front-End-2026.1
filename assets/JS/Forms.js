@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const btnsLogin = document.getElementById("btns_login");
   const carrinho = document.getElementById("icone");
-
+  const listaCarrinho = document.getElementById("listaCarrinho");
 
   const usuarioLogado = JSON.parse(localStorage.getItem("usuarioLogado"));
 
@@ -34,6 +34,27 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
+  if (usuarioLogado && listaCarrinho) {
+    const btnSair = document.createElement("button");
+
+    btnSair.innerText = "Sair da conta";
+
+    btnSair.style.marginTop = "20px";
+    btnSair.style.padding = "10px";
+    btnSair.style.width = "100%";
+    btnSair.style.cursor = "pointer";
+    btnSair.style.border = "none";
+    btnSair.style.borderRadius = "10px";
+    btnSair.style.fontWeight = "bold";
+
+    btnSair.addEventListener("click", () => {
+      localStorage.removeItem("usuarioLogado");
+
+      window.location.reload();
+    });
+
+    listaCarrinho.appendChild(btnSair);
+  }
 
   const admin = {
     usuario: "admin",
@@ -41,7 +62,6 @@ document.addEventListener("DOMContentLoaded", () => {
     email: "admin@example.com",
     admin: true,
   };
-
 
   if (registerBtn) {
     registerBtn.addEventListener("click", ativarRegistro);
@@ -79,7 +99,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-
   async function buscarCep(cepValor) {
     resultado.innerHTML = "Buscando...";
 
@@ -87,6 +106,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const response = await fetch(
         `https://viacep.com.br/ws/${cepValor}/json/`,
       );
+
       const data = await response.json();
 
       if (data.erro) {
@@ -95,15 +115,14 @@ document.addEventListener("DOMContentLoaded", () => {
       }
 
       resultado.innerHTML = `
-            <p><strong>Rua:</strong> ${data.logradouro}</p>
-            <p><strong>Bairro:</strong> ${data.bairro}</p>
-            <p><strong>Cidade:</strong> ${data.localidade} - ${data.uf}</p>
-        `;
+        <p><strong>Rua:</strong> ${data.logradouro}</p>
+        <p><strong>Bairro:</strong> ${data.bairro}</p>
+        <p><strong>Cidade:</strong> ${data.localidade} - ${data.uf}</p>
+      `;
     } catch {
       resultado.innerHTML = "Erro ao buscar CEP!";
     }
   }
-
 
   function ativarRegistro() {
     if (container) {
@@ -125,7 +144,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-
   function mostrarErro(input, mensagem) {
     const box = input.parentElement;
 
@@ -135,6 +153,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (!erro) {
       erro = document.createElement("span");
+
       erro.classList.add("erro-msg");
 
       box.appendChild(erro);
@@ -151,7 +170,6 @@ document.addEventListener("DOMContentLoaded", () => {
     document.querySelectorAll(".erro-msg").forEach((el) => el.remove());
   }
 
-
   function validarEmail(email) {
     return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
   }
@@ -160,6 +178,7 @@ document.addEventListener("DOMContentLoaded", () => {
     cpf = cpf.replace(/\D/g, "");
 
     if (cpf.length !== 11) return false;
+
     if (/^(\d)\1+$/.test(cpf)) return false;
 
     let soma = 0;
@@ -189,7 +208,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     return true;
   }
-
 
   function validarFormulario(e) {
     e.preventDefault();
@@ -268,7 +286,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-
   const formLogin = document.querySelector("#form-login");
 
   if (formLogin) {
@@ -276,10 +293,10 @@ document.addEventListener("DOMContentLoaded", () => {
       e.preventDefault();
 
       const usuarioLogin = document.querySelector("#Login-usuario").value;
+
       const senhaLogin = document.querySelector("#Login-senha").value;
 
       let usuarios = JSON.parse(localStorage.getItem("usuarios")) || [];
-
 
       if (usuarioLogin === admin.email && senhaLogin === admin.senha) {
         localStorage.setItem("usuarioLogado", JSON.stringify(admin));
@@ -288,7 +305,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
         return;
       }
-
 
       const usuarioEncontrado = usuarios.find(
         (user) => user.email === usuarioLogin && user.senha === senhaLogin,
