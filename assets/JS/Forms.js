@@ -1,130 +1,163 @@
+document.addEventListener("DOMContentLoaded", () => {
+  const container = document.getElementById("sl-container");
+  const registerBtn = document.getElementById("btn-register");
+  const loginBtn = document.getElementById("btn-login");
+  const body = document.querySelector(".body-sl");
 
-document.addEventListener('DOMContentLoaded', () => {
+  const form = document.querySelector("#form-registro");
 
+  const usuario = document.querySelector("#registro-usuario");
+  const email = document.querySelector("#registro-email");
+  const cpf = document.querySelector("#registro-cpf");
+  const cep = document.querySelector("#registro-cep");
+  const senha = document.querySelector("#registro-senha");
+  const confSenha = document.querySelector("#registro-conf-senha");
 
-const container = document.getElementById('sl-container');
-const registerBtn = document.getElementById('btn-register');
-const loginBtn = document.getElementById('btn-login');
-const body = document.querySelector('.body-sl');
+  const modal = document.getElementById("modal-cep");
+  const resultado = document.getElementById("resultado-endereco");
+  const btnFechar = document.getElementById("btn-fechar");
+  const btnConfirmar = document.getElementById("btn-confirmar");
 
-const form = document.querySelector('#form-registro');
-
-const usuario = document.querySelector('#registro-usuario');
-const email = document.querySelector('#registro-email');
-const cpf = document.querySelector('#registro-cpf');
-const cep = document.querySelector('#registro-cep');
-const senha = document.querySelector('#registro-senha');
-const confSenha = document.querySelector('#registro-conf-senha');
-
-
-const modal = document.getElementById('modal-cep');
-const resultado = document.getElementById('resultado-endereco');
-const btnFechar = document.getElementById('btn-fechar');
-const btnConfirmar = document.getElementById('btn-confirmar');
-
-
-//Carrinho
-const listabtns_login = document.getElementById("btns_login");
+  const btnsLogin = document.getElementById("btns_login");
+  const carrinho = document.getElementById("icone");
 
 
+  const usuarioLogado = JSON.parse(localStorage.getItem("usuarioLogado"));
+
+  if (btnsLogin && carrinho) {
+    if (usuarioLogado) {
+      carrinho.style.display = "flex";
+      btnsLogin.style.display = "none";
+    } else {
+      carrinho.style.display = "none";
+      btnsLogin.style.display = "flex";
+    }
+  }
 
 
-
-
-const admin = {
+  const admin = {
     usuario: "admin",
     senha: "12345678",
     email: "admin@example.com",
-    admin: true
-};
+    admin: true,
+  };
 
 
-registerBtn.addEventListener('click', ativarRegistro);
-loginBtn.addEventListener('click', ativarLogin);
-form.addEventListener('submit', validarFormulario);
+  if (registerBtn) {
+    registerBtn.addEventListener("click", ativarRegistro);
+  }
 
-cep.addEventListener('blur', () => {
-    let cepLimpo = cep.value.replace(/\D/g, '');
+  if (loginBtn) {
+    loginBtn.addEventListener("click", ativarLogin);
+  }
 
-    if (cepLimpo.length === 8) {
-        modal.style.display = 'block';
+  if (form) {
+    form.addEventListener("submit", validarFormulario);
+  }
+
+  if (cep) {
+    cep.addEventListener("blur", () => {
+      let cepLimpo = cep.value.replace(/\D/g, "");
+
+      if (cepLimpo.length === 8) {
+        modal.style.display = "block";
         buscarCep(cepLimpo);
-    }
-});
+      }
+    });
+  }
 
-btnFechar.addEventListener('click', () => {
-    modal.style.display = 'none';
-    cep.value = '';
-});
+  if (btnFechar) {
+    btnFechar.addEventListener("click", () => {
+      modal.style.display = "none";
+      cep.value = "";
+    });
+  }
 
-btnConfirmar.addEventListener('click', () => {
-    modal.style.display = 'none';
-});
-    
-async function buscarCep(cepValor) {
+  if (btnConfirmar) {
+    btnConfirmar.addEventListener("click", () => {
+      modal.style.display = "none";
+    });
+  }
+
+
+  async function buscarCep(cepValor) {
     resultado.innerHTML = "Buscando...";
 
     try {
-        const response = await fetch(`https://viacep.com.br/ws/${cepValor}/json/`);
-        const data = await response.json();
+      const response = await fetch(
+        `https://viacep.com.br/ws/${cepValor}/json/`,
+      );
+      const data = await response.json();
 
-        if (data.erro) {
-            resultado.innerHTML = "CEP não encontrado!";
-            return;
-        }
+      if (data.erro) {
+        resultado.innerHTML = "CEP não encontrado!";
+        return;
+      }
 
-        resultado.innerHTML = `
+      resultado.innerHTML = `
             <p><strong>Rua:</strong> ${data.logradouro}</p>
             <p><strong>Bairro:</strong> ${data.bairro}</p>
             <p><strong>Cidade:</strong> ${data.localidade} - ${data.uf}</p>
         `;
-
     } catch {
-        resultado.innerHTML = "Erro ao buscar CEP!";
+      resultado.innerHTML = "Erro ao buscar CEP!";
     }
-}
+  }
 
-function ativarRegistro() {
-    container.classList.add('active');
-    body.classList.add('active-bg');
-}
 
-function ativarLogin() {
-    container.classList.remove('active');
-    body.classList.remove('active-bg');
-}
+  function ativarRegistro() {
+    if (container) {
+      container.classList.add("active");
+    }
 
-function mostrarErro(input, mensagem) {
+    if (body) {
+      body.classList.add("active-bg");
+    }
+  }
+
+  function ativarLogin() {
+    if (container) {
+      container.classList.remove("active");
+    }
+
+    if (body) {
+      body.classList.remove("active-bg");
+    }
+  }
+
+
+  function mostrarErro(input, mensagem) {
     const box = input.parentElement;
 
-    input.classList.add('input-erro');
+    input.classList.add("input-erro");
 
-    let erro = box.querySelector('.erro-msg');
+    let erro = box.querySelector(".erro-msg");
 
     if (!erro) {
-        erro = document.createElement('span');
-        erro.classList.add('erro-msg');
-        box.appendChild(erro);
+      erro = document.createElement("span");
+      erro.classList.add("erro-msg");
+
+      box.appendChild(erro);
     }
 
     erro.innerText = mensagem;
-}
+  }
 
-function limparErros() {
-    document.querySelectorAll('.input-box input').forEach(input => {
-        input.classList.remove('input-erro');
+  function limparErros() {
+    document.querySelectorAll(".input-box input").forEach((input) => {
+      input.classList.remove("input-erro");
     });
 
-    document.querySelectorAll('.erro-msg').forEach(el => el.remove());
-}
+    document.querySelectorAll(".erro-msg").forEach((el) => el.remove());
+  }
 
 
-function validarEmail(email) {
+  function validarEmail(email) {
     return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
-}
+  }
 
-function validarCPF(cpf) {
-    cpf = cpf.replace(/\D/g, '');
+  function validarCPF(cpf) {
+    cpf = cpf.replace(/\D/g, "");
 
     if (cpf.length !== 11) return false;
     if (/^(\d)\1+$/.test(cpf)) return false;
@@ -133,142 +166,146 @@ function validarCPF(cpf) {
     let resto;
 
     for (let i = 0; i < 9; i++) {
-        soma += parseInt(cpf[i]) * (10 - i);
+      soma += parseInt(cpf[i]) * (10 - i);
     }
 
     resto = (soma * 10) % 11;
+
     if (resto === 10 || resto === 11) resto = 0;
 
     if (resto !== parseInt(cpf[9])) return false;
 
     soma = 0;
+
     for (let i = 0; i < 10; i++) {
-        soma += parseInt(cpf[i]) * (11 - i);
+      soma += parseInt(cpf[i]) * (11 - i);
     }
 
     resto = (soma * 10) % 11;
+
     if (resto === 10 || resto === 11) resto = 0;
 
     if (resto !== parseInt(cpf[10])) return false;
 
     return true;
-}
+  }
 
 
-function validarFormulario(e) {
+  function validarFormulario(e) {
     e.preventDefault();
 
     let valido = true;
 
     limparErros();
 
-    if (usuario.value.trim() === '') {
-        mostrarErro(usuario, 'Preencha o nome de usuário');
-        valido = false;
+    if (usuario.value.trim() === "") {
+      mostrarErro(usuario, "Preencha o nome de usuário");
+      valido = false;
     }
 
     if (!validarEmail(email.value)) {
-        mostrarErro(email, 'Email inválido');
-        valido = false;
+      mostrarErro(email, "Email inválido");
+      valido = false;
     }
 
     if (!validarCPF(cpf.value)) {
-        mostrarErro(cpf, 'CPF inválido');
-        valido = false;
+      mostrarErro(cpf, "CPF inválido");
+      valido = false;
     }
 
     if (cep.value.length < 8) {
-        mostrarErro(cep, 'CEP inválido');
-        valido = false;
+      mostrarErro(cep, "CEP inválido");
+      valido = false;
     }
 
     if (senha.value.length < 8) {
-        mostrarErro(senha, 'A senha precisa de 8 digitos');
-        valido = false;
+      mostrarErro(senha, "A senha precisa de 8 digitos");
+      valido = false;
     }
 
     if (senha.value !== confSenha.value) {
-        mostrarErro(confSenha, 'As senhas estão diferentes');
-        valido = false;
+      mostrarErro(confSenha, "As senhas estão diferentes");
+      valido = false;
     }
 
     if (valido) {
-
-    const novoUsuario = {
+      const novoUsuario = {
         id: Date.now(),
         usuario: usuario.value.trim(),
         email: email.value.trim(),
         cpf: cpf.value.trim(),
         cep: cep.value.trim(),
-        senha: senha.value
-    };
+        senha: senha.value,
+      };
 
-    let usuarios = JSON.parse(localStorage.getItem('usuarios')) || [];
+      let usuarios = JSON.parse(localStorage.getItem("usuarios")) || [];
 
-    const emailExiste = usuarios.some(user => user.email === novoUsuario.email);
+      const emailExiste = usuarios.some(
+        (user) => user.email === novoUsuario.email,
+      );
 
-    if (emailExiste) {
-        mostrarErro(email, 'Este email já está cadastrado');
+      if (emailExiste) {
+        mostrarErro(email, "Este email já está cadastrado");
         return;
-    }
+      }
 
-    const cpfExiste = usuarios.some(user => user.cpf === novoUsuario.cpf);
+      const cpfExiste = usuarios.some((user) => user.cpf === novoUsuario.cpf);
 
-    if (cpfExiste) {
-        mostrarErro(cpf, 'Este CPF já está cadastrado');
+      if (cpfExiste) {
+        mostrarErro(cpf, "Este CPF já está cadastrado");
         return;
+      }
+
+      usuarios.push(novoUsuario);
+
+      localStorage.setItem("usuarios", JSON.stringify(usuarios));
+
+      console.log("Você foi cadastrado");
+
+      form.reset();
+
+      ativarLogin();
     }
+  }
 
-    usuarios.push(novoUsuario);
 
-    localStorage.setItem('usuarios', JSON.stringify(usuarios));
+  const formLogin = document.querySelector("#form-login");
 
-    console.log('Você foi cadastrado');
+  if (formLogin) {
+    formLogin.addEventListener("submit", function (e) {
+      e.preventDefault();
 
-    form.reset();
+      const usuarioLogin = document.querySelector("#Login-usuario").value;
+      const senhaLogin = document.querySelector("#Login-senha").value;
 
-    ativarLogin();
-}
-}
+      let usuarios = JSON.parse(localStorage.getItem("usuarios")) || [];
 
-const formLogin = document.querySelector('#form-login');
 
-formLogin.addEventListener('submit', function(e) {
-    e.preventDefault();
+      if (usuarioLogin === admin.email && senhaLogin === admin.senha) {
+        localStorage.setItem("usuarioLogado", JSON.stringify(admin));
 
-    const usuarioLogin = document.querySelector('#Login-usuario').value;
-    const senhaLogin = document.querySelector('#Login-senha').value;
+        window.location.href = "admin.html";
 
-    let usuarios = JSON.parse(localStorage.getItem('usuarios')) || [];
+        return;
+      }
 
-    if (usuarioLogin === admin.email && senhaLogin === admin.senha) {
 
-    localStorage.setItem('usuarioLogado', JSON.stringify(admin));
+      const usuarioEncontrado = usuarios.find(
+        (user) => user.email === usuarioLogin && user.senha === senhaLogin,
+      );
 
-    window.location.href = "admin.html";
-    return;
-    }
+      if (usuarioEncontrado) {
+        console.log("Login realizado com sucesso");
 
-    const usuarioEncontrado = usuarios.find(user => 
-        user.email === usuarioLogin && user.senha === senhaLogin
-    );
+        localStorage.setItem(
+          "usuarioLogado",
+          JSON.stringify(usuarioEncontrado),
+        );
 
-    if (usuarioEncontrado) {
-        console.log('Login realizado com sucesso ');    
-        // Redireciona para a página inicial
         window.location.href = "/";
-
-        
-        localStorage.setItem('usuarioLogado', JSON.stringify(usuarioEncontrado));
-
-    } else {
-        console.log('Usuário ou senha incorretos');
-    };
-
+      } else {
+        console.log("Usuário ou senha incorretos");
+      }
+    });
+  }
 });
-
-
-
-})
-
-
