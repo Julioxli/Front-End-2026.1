@@ -1,12 +1,11 @@
-.section {
+/* .section {
     margin-bottom: 15px;
-}
+} */
 .Produtos {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-between;
-    height: 95vh;
     color: #ffffff;
     margin-top: 20px;
 }

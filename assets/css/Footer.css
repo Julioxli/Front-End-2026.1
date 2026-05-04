@@ -1,7 +1,6 @@
-footer {
+.footer {
     background: #17364f;
     width: 100%;
-    margin-top: 90vh;
     background: linear-gradient(to right, #17364f, #cab814);
     color: #fff;
     padding: 5px 1px 10px;
@@ -10,7 +9,6 @@ footer {
     font-weight: 13px;
     line-height: 20px;
 }
-
 
 .footer-row {
     width: 85%;
