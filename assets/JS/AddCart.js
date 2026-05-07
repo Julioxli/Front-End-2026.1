@@ -82,7 +82,20 @@ const product = [
     image: 'assets/img/ram-hyperx-16gb.jpg',
     title: '<p>Ram Kingston HyperX RGB 16GB DDR4</p>',
     price: 950,
+  },
+  {
+    id: 14,
+    image: 'assets/img/placamãe1.webp',
+    title: '<p>Placa Mãe ASUS ROG STRIX B550-F GAMING</p>',
+    price: 1299
+  },
+  {
+    id: 15,
+    image: 'assets/img/fone1.webp',
+    title: '<p>Fone de Ouvido HyperX Cloud Stinger Core</p>',
+    price: 299
   }
+
 ];
 const categories = [...new Set(product.map((item) => { return item }))]
 let i = 0;

@@ -1,7 +1,7 @@
 .footer {
     background: #17364f;
     width: 100%;
-    background: linear-gradient(to right, #17364f, #cab814);
+    background: linear-gradient(#000000, #cab814);
     color: #fff;
     padding: 5px 1px 10px;
     border-top-left-radius: 125px;
@@ -104,6 +104,11 @@
     margin-right: 15px;
     cursor: pointer;
     transition: 0.3s;
+}
+
+.footer-social-icons .fa-brands:hover {
+    background: #000000;
+    color: #fff;
 }
 
 .footer-hr {
