@@ -1,0 +1,148 @@
+  <!DOCTYPE html>
+  <html lang="pt-br">
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="stylesheet" href="..\css/Global.css">
+      <link rel="stylesheet" href="..\css/Navbar.css">
+      <link rel="stylesheet" href="..\css\Login.css">
+      <link rel="stylesheet" href="..\css\Footer.css">
+      <link rel="stylesheet" href="..\css\profile.css">  
+      <!-- <script src="https://kit.fontawesome.com/c4254e24a8.js" crossorigin="anonymous"></script> -->
+      <!-- <script src="..\JS\Forms.js"></script> -->
+      <title>Login - JPL</title>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  </head>
+  <body>
+      <!--NAVBAR-->
+      <nav class="nav-bar">
+        <div class="logo">JPL</div>
+        <ul class="nav-list">
+          <li class="nav-links"><a class="nav-link" href="\Index.html">Home</a></li>
+          <li class="nav-links"><a class="nav-link" href="#about">About</a></li>
+          <li class="nav-links"><a class="nav-link" href="#services">Services</a></li>
+          <li class="nav-links"><a class="nav-link" href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+
+     <section class="dashboard">
+
+    <!-- SIDEBAR PERFIL -->
+    <aside class="sidebar">
+
+        <div class="user-info">
+
+            <h2>João Pedro</h2>
+
+            <span>Cliente Premium</span>
+
+        </div>
+
+        <nav class="sidebar-menu">
+
+            <a href="#" class="active">
+                <i class="fa-solid fa-cart-shopping"></i>
+                Meu Carrinho
+            </a>
+
+            <a href="#" class="logout">
+                <i class="fa-solid fa-right-from-bracket"></i>
+                Sair
+            </a>
+
+        </nav>
+
+    </aside>
+
+    <!-- CONTEÚDO -->
+    <main class="dashboard-content">
+
+        <div class="dashboard-header">
+            <h1>Meu Carrinho</h1>
+            <p>Revise seus produtos antes de finalizar a compra</p>
+        </div>
+
+        <!-- CARRINHO -->
+        <div class="cart-table">
+
+            <div class="cart-row head">
+                <span>Produto</span>
+                <span>Preço</span>
+                <span>Qtd</span>
+                <span>Ação</span>
+            </div>
+
+            <div class="cart-row">
+
+                <div class="product">
+                    <img src="assets/img/rtx4070.png">
+                    <p>RTX 4070</p>
+                </div>
+
+                <span>R$ 4.599</span>
+
+                <span class="qty">1</span>
+
+                <i class="fa-solid fa-trash remove"></i>
+
+            </div>
+
+            <div class="cart-row">
+
+                <div class="product">
+                    <img src="assets/img/mouse.png">
+                    <p>Logitech G Pro X</p>
+                </div>
+
+                <span>R$ 599</span>
+
+                <span class="qty">1</span>
+
+                <i class="fa-solid fa-trash remove"></i>
+
+            </div>
+
+        </div>
+
+        <!-- RESUMO -->
+        <div class="summary">
+
+            <div class="summary-box">
+
+                <h2>Resumo do Pedido</h2>
+
+                <div class="line">
+                    <span>Subtotal</span>
+                    <span>R$ 5.198</span>
+                </div>
+
+                <div class="line">
+                    <span>Frete</span>
+                    <span>Grátis</span>
+                </div>
+
+                <div class="line total">
+                    <span>Total</span>
+                    <span>R$ 5.198</span>
+                </div>
+
+                <button class="checkout">
+                    Finalizar Compra
+                </button>
+
+            </div>
+
+        </div>
+
+    </main>
+
+</section>
+
+
+
+
+  
+
+
+  </body>
+  </html>

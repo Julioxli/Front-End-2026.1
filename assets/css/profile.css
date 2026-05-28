@@ -1,0 +1,164 @@
+.dashboard{
+	display:flex;
+	min-height:100vh;
+	background:#050505;
+	color:#fff;
+}
+
+.sidebar{
+	width:280px;
+	background:#0f0f0f;
+	border-right:1px solid rgba(255,230,0,.15);
+	padding:30px;
+}
+
+.user-info{
+	text-align:center;
+	margin-bottom:40px;
+}
+
+.user-info img{
+	width:110px;
+	height:110px;
+	border-radius:50%;
+	border:3px solid #ffe600;
+}
+
+.user-info h2{
+	margin-top:15px;
+}
+
+.user-info span{
+	color:#ffe600;
+}
+
+.sidebar-menu{
+	display:flex;
+	flex-direction:column;
+	gap:12px;
+}
+
+.sidebar-menu a{
+	display:flex;
+	align-items:center;
+	gap:10px;
+	padding:12px 15px;
+	border-radius:12px;
+	text-decoration:none;
+	color:#ccc;
+	transition:.3s;
+}
+
+.sidebar-menu a:hover{
+	background:rgba(255,230,0,.08);
+	color:#ffe600;
+}
+
+.sidebar-menu .active{
+	background:#ffe600;
+	color:#000;
+	font-weight:bold;
+}
+
+.dashboard-content{
+	flex:1;
+	padding:40px;
+}
+
+.dashboard-header h1{
+	font-size:2rem;
+	margin-bottom:5px;
+}
+
+.dashboard-header p{
+	color:#aaa;
+	margin-bottom:30px;
+}
+
+.cart-table{
+	background:#111;
+	border-radius:15px;
+	padding:20px;
+	border:1px solid rgba(255,230,0,.1);
+}
+
+.cart-row{
+	display:grid;
+	grid-template-columns:2fr 1fr 1fr 1fr;
+	align-items:center;
+	padding:15px 0;
+	border-bottom:1px solid rgba(255,255,255,.05);
+}
+
+.cart-row.head{
+	color:#ffe600;
+	font-weight:bold;
+}
+
+.product{
+	display:flex;
+	align-items:center;
+	gap:10px;
+}
+
+.product img{
+	width:45px;
+	height:45px;
+	object-fit:contain;
+}
+
+.qty{
+	text-align:center;
+}
+
+.remove{
+	color:#ff4d4d;
+	cursor:pointer;
+}
+
+.summary{
+	margin-top:30px;
+	display:flex;
+	justify-content:flex-end;
+}
+
+.summary-box{
+	width:320px;
+	background:#111;
+	padding:20px;
+	border-radius:15px;
+	border:1px solid rgba(255,230,0,.1);
+}
+
+.summary-box h2{
+	color:#ffe600;
+	margin-bottom:15px;
+}
+
+.line{
+	display:flex;
+	justify-content:space-between;
+	margin-bottom:10px;
+	color:#ccc;
+}
+
+.total{
+	color:#ffe600;
+	font-weight:bold;
+}
+
+.checkout{
+	width:100%;
+	margin-top:15px;
+	padding:12px;
+	border:none;
+	background:#ffe600;
+	color:#000;
+	font-weight:bold;
+	border-radius:10px;
+	cursor:pointer;
+}
+
+.checkout:hover{
+	box-shadow:0 0 15px #ffe600;
+}
