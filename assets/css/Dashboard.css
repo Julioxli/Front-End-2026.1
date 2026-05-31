@@ -1,0 +1,205 @@
+/* JANELA DO DASHBOARD */
+.sidebar{
+    display:none;
+
+    position:fixed;
+    top:50%;
+    left:50%;
+    transform:translate(-50%, -50%);
+
+    width:90vw;
+    height:90vh;
+
+    background:#333333;
+    border-radius:20px;
+
+    overflow:hidden;
+    z-index:1000;
+}
+
+.sidebar.ativo{
+    display:block;
+}
+
+/* LAYOUT */
+.dashboard{
+    display:flex;
+    height:100%;
+    color:#fff;
+}
+
+/* MENU ESQUERDO */
+.dashboard .sidebar{
+    position:static;
+    transform:none;
+
+    width:240px;
+    height:100%;
+
+    display:block;
+
+    background:#0f0f0f;
+    border-right:1px solid rgba(255,230,0,.15);
+
+    padding:25px;
+    border-radius:0;
+    box-shadow:none;
+}
+
+/* PERFIL */
+.user-info{
+    text-align:center;
+    margin-bottom:30px;
+}
+
+.user-info h2{
+    font-size:22px;
+    margin-bottom:8px;
+    color: #fff;
+}
+
+.user-info span{
+    color:#ffe600;
+    font-size:14px;
+}
+
+/* MENU */
+.sidebar-menu{
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+}
+
+.sidebar-menu a{
+    display:flex;
+    align-items:center;
+    gap:10px;
+
+    padding:12px;
+    border-radius:10px;
+
+    text-decoration:none;
+    color:#ccc;
+
+    transition:.3s;
+}
+
+.sidebar-menu .active{
+    background:#ffe600;
+    color:#000;
+}
+
+/* CONTEÚDO */
+.dashboard-content{
+    flex:1;
+
+    padding:25px;
+
+    overflow-y:auto;
+}
+
+/* CABEÇALHO */
+.dashboard-header h1{
+    font-size:28px;
+    margin-bottom:5px;
+}
+
+.dashboard-header p{
+    color:#aaa;
+    margin-bottom:20px;
+}
+
+/* TABELA */
+.cart-table{
+    background:#111;
+    border-radius:15px;
+    padding:20px;
+}
+
+.cart-row{
+    display:grid;
+    grid-template-columns:2fr 1fr 80px 60px;
+
+    align-items:center;
+
+    padding:12px 0;
+
+    border-bottom:1px solid rgba(255,255,255,.08);
+}
+
+.cart-row.head{
+    color:#ffe600;
+    font-weight:bold;
+}
+
+.product{
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
+
+.product img{
+    width:50px;
+    height:50px;
+    object-fit:contain;
+}
+
+.qty{
+    text-align:center;
+}
+
+.remove{
+    text-align:center;
+    color:#ff4d4d;
+    cursor:pointer;
+}
+
+/* RESUMO */
+.summary{
+    margin-top:25px;
+
+    display:flex;
+    justify-content:flex-end;
+}
+
+.summary-box{
+    width:320px;
+
+    background:#111;
+
+    border-radius:15px;
+
+    padding:20px;
+}
+
+.summary-box h2{
+    color:#ffe600;
+    margin-bottom:15px;
+}
+
+.line{
+    display:flex;
+    justify-content:space-between;
+    margin-bottom:12px;
+}
+
+.total{
+    font-weight:bold;
+    color:#ffe600;
+}
+
+.checkout{
+    width:100%;
+    margin-top:15px;
+
+    padding:12px;
+
+    border:none;
+    border-radius:10px;
+
+    background:#ffe600;
+    color:#000;
+
+    font-weight:bold;
+    cursor:pointer;
+}

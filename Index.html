@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="assets/css/Navbar.css">
     <link rel="stylesheet" href="assets/css/Footer.css">
     <link rel="stylesheet" href="assets/css/produtos.css">
+    <link rel="stylesheet" href="assets/css/Dashboard.css">
     <script src="https://kit.fontawesome.com/c4254e24a8.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <title>Home page</title>
@@ -37,16 +38,83 @@
     </div>
 
     <div class="sidebar" id="listaCarrinho">
-        <div class="head">
-          <p>Meu Carrinho</p>
-        </div>
-        <div id="cartItem">Carrinho vazio</div>
-        <div class="foot" >
-          <h3>Total</h3>
-          <h2 id="total">R$ 0.00</h2>
-        </div>
-      </div>
+
+    <section class="dashboard">
+
+        <aside class="dashboard-sidebar">
+
+            <div class="user-info">
+                <h2 id="nomeUsuario">Usuário</h2>
+                <span>Cliente Premium</span>
+            </div>
+
+            <nav class="sidebar-menu">
+
+                <a href="#" class="active">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    Meu Carrinho
+                </a>
+
+                <a href="#" class="logout">
+                    <i class="fa-solid fa-right-from-bracket"></i>
+                    Sair
+                </a>
+
+            </nav>
+
+        </aside>
+
+        <main class="dashboard-content">
+
+            <div class="dashboard-header">
+                <h1>Meu Carrinho</h1>
+                <p>Revise seus produtos antes de finalizar a compra</p>
+            </div>
+
+            <!-- PRODUTOS -->
+            <div class="cart-table">
+
+                <div class="cart-row head">
+                    <span>Produto</span>
+                    <span>Preço</span>
+                    <span>Qtd</span>
+                    <span>Ação</span>
+                </div>
+
+                <div id="cartItem">
+                    Carrinho vazio
+                </div>
+
+            </div>
+
+            <div class="summary">
+
+                <div class="summary-box">
+
+                    <h2>Resumo do Pedido</h2>
+
+                    <div class="line">
+                        <span>Frete</span>
+                        <span>Grátis</span>
+                    </div>
+
+                    <div class="line total">
+                        <span>Total</span>
+                        <span id="total">R$ 0,00</span>
+                    </div>
+
+                    <button class="checkout">
+                        Finalizar Compra
+                    </button>
+
+                </div>
+
+            </div>
+
+        </main>
+
     </section>
+
   
    
 
