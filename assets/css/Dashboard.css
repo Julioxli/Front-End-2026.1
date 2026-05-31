@@ -1,18 +1,14 @@
 /* JANELA DO DASHBOARD */
 .sidebar{
     display:none;
-
     position:fixed;
     top:50%;
     left:50%;
     transform:translate(-50%, -50%);
-
     width:90vw;
     height:90vh;
-
     background:#333333;
     border-radius:20px;
-
     overflow:hidden;
     z-index:1000;
 }
@@ -32,15 +28,11 @@
 .dashboard .sidebar{
     position:static;
     transform:none;
-
     width:240px;
     height:100%;
-
     display:block;
-
     background:#0f0f0f;
     border-right:1px solid rgba(255,230,0,.15);
-
     padding:25px;
     border-radius:0;
     box-shadow:none;
@@ -74,13 +66,10 @@
     display:flex;
     align-items:center;
     gap:10px;
-
     padding:12px;
     border-radius:10px;
-
     text-decoration:none;
     color:#ccc;
-
     transition:.3s;
 }
 
@@ -92,9 +81,7 @@
 /* CONTEÚDO */
 .dashboard-content{
     flex:1;
-
     padding:25px;
-
     overflow-y:auto;
 }
 
@@ -118,13 +105,9 @@
 
 .cart-row{
     display:grid;
-    grid-template-columns:2fr 1fr 80px 60px;
-
+    grid-template-columns:2.5fr 1fr 0.5fr 0.3fr;
     align-items:center;
-
-    padding:12px 0;
-
-    border-bottom:1px solid rgba(255,255,255,.08);
+    gap:10px;
 }
 
 .cart-row.head{
@@ -132,10 +115,11 @@
     font-weight:bold;
 }
 
+
 .product{
     display:flex;
     align-items:center;
-    gap:10px;
+    gap:12px;
 }
 
 .product img{
@@ -144,10 +128,10 @@
     object-fit:contain;
 }
 
-.qty{
+.qty,
+.remove{
     text-align:center;
 }
-
 .remove{
     text-align:center;
     color:#ff4d4d;
@@ -164,11 +148,8 @@
 
 .summary-box{
     width:320px;
-
     background:#111;
-
     border-radius:15px;
-
     padding:20px;
 }
 
@@ -191,15 +172,11 @@
 .checkout{
     width:100%;
     margin-top:15px;
-
     padding:12px;
-
     border:none;
     border-radius:10px;
-
     background:#ffe600;
     color:#000;
-
     font-weight:bold;
     cursor:pointer;
 }
