@@ -165,10 +165,18 @@ function displaycart() {
     </div>
   `).join('');
 }
-
 if (icone && lista) {
-  icone.addEventListener('click', () => {
-    lista.classList.toggle('ativo');
+  icone.addEventListener("click", (event) => {
+    event.stopPropagation();
+    lista.classList.toggle("ativo");
+  });
+
+  lista.addEventListener("click", (event) => {
+    event.stopPropagation();
+  });
+
+  document.addEventListener("click", () => {
+    lista.classList.remove("ativo");
   });
 }
 
