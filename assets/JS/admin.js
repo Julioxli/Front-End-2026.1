@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         div.innerHTML = `
             <p><strong>Nome:</strong> ${user.usuario}</p>
-            <p><strong>Email:</strong> ${user.email}</p>
+            <p><strong>Email:</strong> ${user.email}</p>\n            <p><strong>Cadastro:</strong> ${user.dataCadastro || "Não informado"}</p>
             <button onclick="excluirUsuario(${user.id})">Excluir</button>
             <hr>
         `;

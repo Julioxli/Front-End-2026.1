@@ -166,3 +166,19 @@
     font-size:.85rem;
 }
 }
+
+.logo-area{
+ display:flex;
+ align-items:center;
+ gap:18px;
+}
+#welcomeUser{
+ color:#fff;
+ font-weight:600;
+ font-size:1rem;
+}
+.user-actions{
+ display:flex;
+ align-items:center;
+ gap:10px;
+}

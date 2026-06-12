@@ -30,6 +30,16 @@ document.addEventListener("DOMContentLoaded", () => {
     nomeUsuario.textContent = usuarioLogado.usuario;
   }
 
+  
+  const profileIcon = document.getElementById("userProfileIcon");
+  if(profileIcon){
+    profileIcon.style.display = usuarioLogado ? "flex" : "none";
+    if(usuarioLogado){
+      const nomeSpan=document.getElementById("navbarUserName");
+      if(nomeSpan) nomeSpan.textContent=usuarioLogado.usuario;
+    }
+  }
+
   if (btnsLogin && carrinho) {
     if (usuarioLogado) {
       carrinho.style.display = "flex";
@@ -277,6 +287,7 @@ if (logoutLink) {
         cpf: cpf.value.trim(),
         cep: cep.value.trim(),
         senha: senha.value,
+        dataCadastro: new Date().toLocaleDateString("pt-BR"),
       };
 
       let usuarios = JSON.parse(localStorage.getItem("usuarios")) || [];

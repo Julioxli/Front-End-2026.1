@@ -15,15 +15,21 @@
 <body>
     <!--NAVBAR-->
     <nav class="nav-bar">
-      <div class="logo">JPL</div>
+      <div class="logo-area"><div class="logo">JPL</div><span id="welcomeUser" style="display:none;"></span></div>
       <ul class="nav-list">
         <li class="nav-links"><a class="nav-link" href="Index.html">Home</a></li>
         <li class="nav-links"><a class="nav-link" href="#about">About</a></li>
         <li class="nav-links"><a class="nav-link" href="#services">Services</a></li>
         <li class="nav-links"><a class="nav-link" href="#contact">Contact</a></li>
       </ul>
-      <div id="icone" class="cart"><i class="fa-solid fa-cart-shopping"></i>
+      <div class="user-actions"><div id="icone" class="cart"><i class="fa-solid fa-cart-shopping"></i>
         <p id="count">0</p>
+      </div>
+      <div id="userProfileIcon" style="display:none;align-items:center;gap:6px;">
+        <span id="navbarUserName" style="color:white;font-weight:bold;"></span>
+        <a href="assets/pages/Profile.html" title="Meu Perfil">
+          <i class="fa-solid fa-user-circle" style="font-size:32px;color:white;"></i>
+        </a>
       </div>
       <div class="btns_navbar" id="btns_login">
         <a href="assets/pages/login.html"><button class="btn_login">Login</button></a>
@@ -166,5 +172,24 @@
 
     <script src="assets/JS/AddCart.js"></script>
     <script src="assets/JS/Forms.js"></script>
+
+<script>
+document.addEventListener('DOMContentLoaded',()=>{
+ const usuario=JSON.parse(localStorage.getItem('usuarioLogado'));
+ const welcome=document.getElementById('welcomeUser');
+ const userIcon=document.getElementById('userProfileIcon');
+ const loginBtns=document.getElementById('btns_login');
+ const navbarName=document.getElementById('navbarUserName');
+ if(usuario && usuario.usuario){
+   const primeiroNome=usuario.usuario.split(' ')[0];
+   welcome.textContent='Bem-vindo, '+primeiroNome;
+   welcome.style.display='inline';
+   navbarName.textContent='';
+   userIcon.style.display='flex';
+   if(loginBtns) loginBtns.style.display='none';
+ }
+});
+</script>
+
 </body>
 </html>
