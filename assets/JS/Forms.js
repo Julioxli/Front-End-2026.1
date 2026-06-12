@@ -23,6 +23,12 @@ document.addEventListener("DOMContentLoaded", () => {
   const listaCarrinho = document.getElementById("listaCarrinho");
 
   const usuarioLogado = JSON.parse(localStorage.getItem("usuarioLogado"));
+  const nomeUsuario = document.getElementById("nomeUsuario");
+
+  //Nome do usuário no dashboard
+  if (usuarioLogado && nomeUsuario) {
+    nomeUsuario.textContent = usuarioLogado.usuario;
+  }
 
   if (btnsLogin && carrinho) {
     if (usuarioLogado) {
@@ -55,6 +61,23 @@ document.addEventListener("DOMContentLoaded", () => {
 
     listaCarrinho.appendChild(btnSair);
   }
+
+  const logoutLink = document.querySelector(".logout");
+
+if (logoutLink) {
+  logoutLink.addEventListener("click", (e) => {
+    e.preventDefault();
+
+    localStorage.removeItem("usuarioLogado");
+
+    carrinho.style.display = "none";
+    btnsLogin.style.display = "flex";
+
+    listaCarrinho.classList.remove("ativo");
+
+    window.location.reload();
+  });
+}
 
   const admin = {
     usuario: "admin",
@@ -278,7 +301,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
       localStorage.setItem("usuarios", JSON.stringify(usuarios));
 
-      console.log("Você foi cadastrado");
+      alert("Cadastro realizado com sucesso!");
 
       form.reset();
 
@@ -306,6 +329,8 @@ document.addEventListener("DOMContentLoaded", () => {
         return;
       }
 
+      
+
       const usuarioEncontrado = usuarios.find(
         (user) => user.email === usuarioLogin && user.senha === senhaLogin,
       );
@@ -318,10 +343,13 @@ document.addEventListener("DOMContentLoaded", () => {
           JSON.stringify(usuarioEncontrado),
         );
 
-        window.location.href = "/";
+        window.location.href = "../../Index.html";
       } else {
-        console.log("Usuário ou senha incorretos");
+        alert("Usuário ou senha incorretos");
       }
     });
   }
 });
+
+
+

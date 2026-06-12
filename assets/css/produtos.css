@@ -1,14 +1,11 @@
-/* .section {
-    margin-bottom: 15px;
-} */
 
 .Produtos {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-between;
-    color: #ffffff;
-    margin-top: 20px;
+    background-color: #333;
+    margin-top: 20px #333;
 }
 
 .card-produto {
@@ -70,22 +67,7 @@
     height: 110px;
 }
 
-.sidebar {
-    margin-top: 50px;
-    display: none;
-}
 
-.sidebar{
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    width: 55vh;
-    background: linear-gradient(to bottom, #d8c309, #ffe600);
-    border: 1px solid #ccc;
-    padding: 10px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.2);
-    z-index: 1000;
-}
 
 button{
     width: 100%;
@@ -188,10 +170,51 @@ img {
     width: 50%;
 }
 
-/* #btns_login {
-    display: block;
+
+
+.sidebar{
+    display: none;
+
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    width: 90vw;
+    height: 90vh;
+
+    background: #fff;
+    border-radius: 20px;
+    padding: 30px;
+
+    box-shadow: 0 0 30px rgba(0,0,0,.3);
+    z-index: 1000;
+
+    overflow-y: auto;
 }
 
-#btns_login.ativo {
-  display: none;
-} */
+.sidebar.ativo{
+    display: block;
+}
+.card-produto h1 {
+  font-size: 18px;
+  min-height: 54px;
+  margin: 12px 0;
+}
+
+.card-produto .images {
+  height: 190px;
+  object-fit: contain;
+  background: #fff;
+}
+
+.cart-item p {
+  flex: 1;
+  margin: 0 12px;
+  color: #fff;
+  font-size: 14px;
+}
+
+.cart-item h2 {
+  color: #fff;
+}

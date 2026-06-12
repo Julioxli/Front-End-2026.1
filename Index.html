@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="assets/css/Navbar.css">
     <link rel="stylesheet" href="assets/css/Footer.css">
     <link rel="stylesheet" href="assets/css/produtos.css">
+    <link rel="stylesheet" href="assets/css/Dashboard.css">
     <script src="https://kit.fontawesome.com/c4254e24a8.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <title>Home page</title>
@@ -16,7 +17,7 @@
     <nav class="nav-bar">
       <div class="logo">JPL</div>
       <ul class="nav-list">
-        <li class="nav-links"><a class="nav-link" href="\Index.html">Home</a></li>
+        <li class="nav-links"><a class="nav-link" href="Index.html">Home</a></li>
         <li class="nav-links"><a class="nav-link" href="#about">About</a></li>
         <li class="nav-links"><a class="nav-link" href="#services">Services</a></li>
         <li class="nav-links"><a class="nav-link" href="#contact">Contact</a></li>
@@ -25,28 +26,97 @@
         <p id="count">0</p>
       </div>
       <div class="btns_navbar" id="btns_login">
-        <a href="assets\pages\login.html"><button class="btn_login">Login</button></a>
+        <a href="assets/pages/login.html"><button class="btn_login">Login</button></a>
       </div>
     </nav>
 
     <!--HOME--> 
 
-    <section class="Produtos">
+    <section class="Produtos" id="services">
       <div class="Produtos" id="root">
        <!-- Os produtos serão inseridos aqui pelo JavaScript -->
     </div>
 
     <div class="sidebar" id="listaCarrinho">
-        <div class="head">
-          <p>Meu Carrinho</p>
-        </div>
-        <div id="cartItem">Carrinho vazio</div>
-        <div class="foot" >
-          <h3>Total</h3>
-          <h2 id="total">R$ 0.00</h2>
-        </div>
+
+    <div class="dashboard">
+
+        <aside class="dashboard-sidebar">
+
+            <div class="user-info">
+                <h2 id="nomeUsuario">Usuário</h2>
+                <span>Cliente Premium</span>
+            </div>
+
+            <nav class="sidebar-menu">
+
+                <a href="#" class="active">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    Meu Carrinho
+                </a>
+
+                <a href="#" class="logout">
+                    <i class="fa-solid fa-right-from-bracket"></i>
+                    Sair
+                </a>
+
+            </nav>
+
+        </aside>
+      
+        <main class="dashboard-content">
+
+            <div class="dashboard-header">
+                <h1>Meu Carrinho</h1>
+                <p>Revise seus produtos antes de finalizar a compra</p>
+            </div>
+
+            <!-- PRODUTOS -->
+            <div class="cart-table">
+
+                <div class="cart-row head">
+                    <span>Produto</span>
+                    <span>Preço</span>
+                    <span>Qtd</span>
+                    <span>Ação</span>
+                </div>
+
+                <div id="cartItem">
+                    Carrinho vazio
+                </div>
+
+            </div>
+
+            <div class="summary">
+
+                <div class="summary-box">
+
+                    <h2>Resumo do Pedido</h2>
+
+                    <div class="line">
+                        <span>Frete</span>
+                        <span>Grátis</span>
+                    </div>
+
+                    <div class="line total">
+                        <span>Total</span>
+                        <span id="total">R$ 0,00</span>
+                    </div>
+
+                    <button class="checkout">
+                        Finalizar Compra
+                    </button>
+
+                </div>
+
+            </div>
+
+        </main>
+
+  
       </div>
-    </section>
+      </section>
+
   
    
 
@@ -54,7 +124,7 @@
    <footer class="footer">
       <div class="footer-row">
         <div class="footer-col">
-          <img src="assets/img/logo.png" alt="Logo do JPL" class="footer-logo">
+          <div class="footer-logo-text">JPL</div>
           <p>O JPL Store é uma plataforma de venda de produtos eletrônicos e periféricos, com maior foco em peças e componentes para computadores.</p>
         </div>
         <div class="footer-col">
@@ -68,7 +138,7 @@
         <div class="footer-col">
           <h3>Links Úteis <div class="footer-topic"><span class="topic-span"></span></div></h3>
           <ul>
-            <li><a href="\Index.html">Home</a></li>
+            <li><a href="Index.html">Home</a></li>
             <li><a href="#about">About</a></li>
             <li><a href="#services">Services</a></li>
              <li><a href="#contact">Features</a></li>
@@ -94,7 +164,7 @@
         <p class="footer-copyright">© 2024 JPL. Todos os direitos reservados.</p>
     </footer>  
 
-    <script src="assets/js/AddCart.js"></script>
-    <script src="assets/js/Forms.js"></script>
+    <script src="assets/JS/AddCart.js"></script>
+    <script src="assets/JS/Forms.js"></script>
 </body>
 </html>

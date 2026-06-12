@@ -1,11 +1,31 @@
-# Front-End 2026.1
-## Curso de Análise e Desenvolvimento de Sistemas (ADS)
+# JPL Store
 
-O Desafio: Construir o Portal de Varejo Digital Desenvolver o MVP de um portal de divulgação e captura de clientes, focando em uma interface moderna, responsiva e acessível.
-Exclusivamente Front-End.
-Sem banco de dados real (simulação
-via localStorage).
+Projeto acadêmico de uma loja virtual simples de eletrônicos, feito com HTML, CSS e JavaScript.
 
-Mapeando o Terreno: Arquitetura de Dois Fluxos
+## Funcionalidades
 
+- Listagem de produtos na página inicial.
+- Carrinho de compras com adição, remoção, contador e total.
+- Persistência do carrinho usando `localStorage`.
+- Cadastro de usuários com validação de email, CPF, senha e CEP.
+- Consulta de endereço usando ViaCEP.
+- Login de usuário comum.
+- Login administrativo para visualizar e excluir usuários cadastrados.
 
+## Login administrador
+
+- Email: `admin@example.com`
+- Senha: `12345678`
+
+## Como rodar
+
+Abra o arquivo `Index.html` no navegador ou use a extensão Live Server no VS Code.
+
+## Tecnologias usadas
+
+- HTML5
+- CSS3
+- JavaScript
+- LocalStorage
+- ViaCEP
+- Font Awesome
