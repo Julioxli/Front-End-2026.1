@@ -362,5 +362,3 @@ if (logoutLink) {
   }
 });
 
-
-

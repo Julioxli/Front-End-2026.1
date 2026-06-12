@@ -148,6 +148,7 @@ function displaycart() {
     cartItem.innerHTML = 'Carrinho vazio';
     totalEl.innerHTML = formatarMoeda(0);
     return;
+
   }
 
   const total = cart.reduce((soma, item) => soma + item.price, 0);
