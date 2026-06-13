@@ -8,37 +8,510 @@
 <title>Perfil</title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 <style>
-.profile-card{max-width:500px;margin:60px auto;padding:30px;background:#fff;border-radius:15px;text-align:center;box-shadow:0 0 10px rgba(0,0,0,.15)}
-.profile-card i{font-size:90px;margin-bottom:15px}
-.profile-card h2{margin-bottom:10px}
-.profile-card p{margin:8px 0}
-.btn-home,.btn-logout{padding:10px 20px;border:none;border-radius:8px;cursor:pointer;margin:10px}
+body{
+  min-height:100vh;
+  background:#0b0b0b;
+  color:#fff;
+}
+
+.profile-page{
+  width:min(1180px,92%);
+  margin:55px auto;
+}
+
+.profile-header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:25px;
+  padding:30px;
+  border-radius:22px;
+  background:linear-gradient(135deg,#151515,#252525);
+  border:1px solid rgba(255,230,0,.22);
+  box-shadow:0 0 30px rgba(255,230,0,.08);
+}
+
+.profile-info{
+  display:flex;
+  align-items:center;
+  gap:22px;
+}
+
+.profile-info i{
+  font-size:78px;
+  color:#ffe600;
+  filter:drop-shadow(0 0 10px rgba(255,230,0,.35));
+}
+
+.profile-info h1{
+  font-size:30px;
+  margin-bottom:8px;
+}
+
+.profile-info p{
+  color:#cfcfcf;
+  margin:4px 0;
+}
+
+.profile-badge{
+  display:inline-block;
+  color:#000;
+  background:#ffe600;
+  padding:6px 12px;
+  border-radius:999px;
+  font-weight:700;
+  margin-top:8px;
+}
+
+.profile-actions{
+  display:flex;
+  gap:12px;
+  flex-wrap:wrap;
+  justify-content:flex-end;
+}
+
+.profile-btn{
+  border:none;
+  border-radius:12px;
+  padding:13px 18px;
+  font-weight:700;
+  cursor:pointer;
+  transition:.25s ease;
+}
+
+.profile-btn.primary{
+  background:#ffe600;
+  color:#000;
+}
+
+.profile-btn.secondary{
+  background:#1b1b1b;
+  color:#fff;
+  border:1px solid rgba(255,230,0,.25);
+}
+
+.profile-btn:hover{
+  transform:translateY(-3px);
+  box-shadow:0 0 18px rgba(255,230,0,.2);
+}
+
+.profile-cart-panel{
+  display:none;
+  margin-top:30px;
+  background:#303030;
+  border-radius:22px;
+  overflow:hidden;
+  border:1px solid rgba(255,230,0,.18);
+  box-shadow:0 0 35px rgba(0,0,0,.45);
+}
+
+.profile-cart-panel.ativo{
+  display:block;
+}
+
+.profile-dashboard{
+  display:flex;
+  min-height:560px;
+}
+
+.profile-dashboard-menu{
+  width:260px;
+  background:#111;
+  padding:28px 22px;
+  border-right:1px solid rgba(255,230,0,.18);
+}
+
+.profile-dashboard-menu h2{
+  font-size:22px;
+  margin-bottom:8px;
+}
+
+.profile-dashboard-menu span{
+  color:#ffe600;
+  font-size:14px;
+}
+
+.profile-menu-link{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  margin-top:26px;
+  padding:14px;
+  border-radius:12px;
+  background:#ffe600;
+  color:#000;
+  font-weight:700;
+}
+
+.profile-cart-content{
+  flex:1;
+  padding:30px;
+}
+
+.profile-cart-content h2{
+  font-size:32px;
+  margin-bottom:8px;
+}
+
+.profile-cart-content > p{
+  color:#bdbdbd;
+  margin-bottom:24px;
+}
+
+.profile-cart-grid{
+  display:grid;
+  grid-template-columns:1fr 330px;
+  gap:28px;
+  align-items:start;
+}
+
+.profile-cart-table{
+  background:#111;
+  border-radius:16px;
+  overflow:hidden;
+}
+
+.profile-cart-head,
+.profile-cart-row{
+  display:grid;
+  grid-template-columns:2.3fr .8fr .5fr .5fr;
+  align-items:center;
+  gap:12px;
+  padding:16px 20px;
+}
+
+.profile-cart-head{
+  color:#ffe600;
+  font-weight:800;
+  border-bottom:1px solid rgba(255,230,0,.15);
+}
+
+.profile-cart-row{
+  border-bottom:1px solid rgba(255,255,255,.08);
+}
+
+.profile-cart-row:last-child{
+  border-bottom:none;
+}
+
+.profile-product{
+  display:flex;
+  align-items:center;
+  gap:14px;
+}
+
+.profile-product img{
+  width:58px;
+  height:58px;
+  object-fit:contain;
+  background:#fff;
+  border-radius:12px;
+  padding:6px;
+}
+
+.profile-product p{
+  font-size:14px;
+  line-height:1.35;
+}
+
+.profile-price,
+.profile-qty{
+  font-weight:700;
+}
+
+.profile-remove{
+  color:#ff5757;
+  cursor:pointer;
+  font-size:18px;
+  text-align:center;
+  transition:.25s;
+}
+
+.profile-remove:hover{
+  transform:scale(1.15);
+}
+
+.profile-empty{
+  padding:22px;
+  color:#fff;
+}
+
+.profile-summary{
+  background:#111;
+  border-radius:16px;
+  padding:24px;
+  position:sticky;
+  top:20px;
+}
+
+.profile-summary h3{
+  color:#ffe600;
+  font-size:22px;
+  margin-bottom:20px;
+}
+
+.profile-summary-line{
+  display:flex;
+  justify-content:space-between;
+  margin-bottom:14px;
+}
+
+.profile-summary-line.total{
+  color:#ffe600;
+  font-weight:800;
+  font-size:18px;
+}
+
+.profile-checkout{
+  width:100%;
+  margin-top:18px;
+  border:none;
+  border-radius:12px;
+  background:#ffe600;
+  color:#000;
+  padding:14px;
+  font-weight:800;
+  cursor:pointer;
+}
+
+.profile-close-cart{
+  margin-top:12px;
+  width:100%;
+  border:1px solid rgba(255,230,0,.25);
+  border-radius:12px;
+  background:#181818;
+  color:#fff;
+  padding:12px;
+  font-weight:700;
+  cursor:pointer;
+}
+
+@media(max-width:900px){
+  .profile-header,
+  .profile-dashboard{
+    flex-direction:column;
+    align-items:stretch;
+  }
+
+  .profile-dashboard-menu{
+    width:auto;
+    border-right:none;
+    border-bottom:1px solid rgba(255,230,0,.18);
+  }
+
+  .profile-cart-grid{
+    grid-template-columns:1fr;
+  }
+
+  .profile-cart-head,
+  .profile-cart-row{
+    grid-template-columns:1fr;
+  }
+
+  .profile-actions{
+    justify-content:flex-start;
+  }
+}
 </style>
 </head>
 <body>
 <nav class="nav-bar">
-<div class="logo">JPL</div>
-<ul class="nav-list">
-<li class="nav-links"><a class="nav-link" href="../../Index.html">Home</a></li>
-</ul>
+  <div class="logo-area">
+    <div class="logo">JPL</div>
+  </div>
+  <ul class="nav-list">
+    <li class="nav-links"><a class="nav-link" href="../../Index.html">Home</a></li>
+  </ul>
 </nav>
-<div class="profile-card">
-<i class="fa-solid fa-user-circle"></i>
-<h2 id="nomePerfil">Usuário</h2>
-<p id="emailPerfil">Email não disponível</p>
-<p>Cliente da JPL Store</p>
-<button class="btn-home" onclick="window.location='../../Index.html'">Voltar à Loja</button>
-<button class="btn-logout" id="logoutBtn">Sair</button>
-</div>
+
+<main class="profile-page">
+  <section class="profile-header">
+    <div class="profile-info">
+      <i class="fa-solid fa-circle-user"></i>
+      <div>
+        <h1 id="nomePerfil">Usuário</h1>
+        <p id="emailPerfil">Email não disponível</p>
+        <p id="dataPerfil">Cadastro não informado</p>
+        <span class="profile-badge">Conta Ativa</span>
+      </div>
+    </div>
+
+    <div class="profile-actions">
+      <button class="profile-btn primary" id="toggleCart">
+        <i class="fa-solid fa-cart-shopping"></i> Ver Meu Carrinho
+      </button>
+      <button class="profile-btn secondary" onclick="window.location='../../Index.html'">
+        <i class="fa-solid fa-store"></i> Voltar à Loja
+      </button>
+      <button class="profile-btn secondary" id="logoutBtn">
+        <i class="fa-solid fa-right-from-bracket"></i> Sair
+      </button>
+    </div>
+  </section>
+
+  <section class="profile-cart-panel" id="profileCartArea">
+    <div class="profile-dashboard">
+      <aside class="profile-dashboard-menu">
+        <h2 id="sidebarNomeUsuario">Usuário</h2>
+        <span>Cliente Premium</span>
+
+        <div class="profile-menu-link">
+          <i class="fa-solid fa-cart-shopping"></i>
+          Meu Carrinho
+        </div>
+      </aside>
+
+      <div class="profile-cart-content">
+        <h2>Meu Carrinho</h2>
+        <p>Revise seus produtos antes de finalizar a compra</p>
+
+        <div class="profile-cart-grid">
+          <div class="profile-cart-table">
+            <div class="profile-cart-head">
+              <span>Produto</span>
+              <span>Preço</span>
+              <span>Qtd</span>
+              <span>Ação</span>
+            </div>
+            <div id="profileCartItems">
+              <p class="profile-empty">Carrinho vazio</p>
+            </div>
+          </div>
+
+          <aside class="profile-summary">
+            <h3>Resumo do Pedido</h3>
+            <div class="profile-summary-line">
+              <span>Frete</span>
+              <span>Grátis</span>
+            </div>
+            <div class="profile-summary-line">
+              <span>Itens</span>
+              <span id="profileCartCount">0</span>
+            </div>
+            <div class="profile-summary-line total">
+              <span>Total</span>
+              <span id="profileCartTotal">R$ 0,00</span>
+            </div>
+            <button class="profile-checkout" id="profileCheckout">Finalizar Compra</button>
+            <button class="profile-close-cart" id="closeCartProfile">Fechar Carrinho</button>
+          </aside>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
 <script>
-const user=JSON.parse(localStorage.getItem('usuarioLogado'));
+const user = JSON.parse(localStorage.getItem('usuarioLogado'));
+const nomePerfil = document.getElementById('nomePerfil');
+const sidebarNomeUsuario = document.getElementById('sidebarNomeUsuario');
+
 if(user){
-document.getElementById('nomePerfil').textContent=user.usuario||'Usuário';
-document.getElementById('emailPerfil').textContent=user.email||'Sem email';
+  nomePerfil.textContent = user.usuario || 'Usuário';
+  sidebarNomeUsuario.textContent = user.usuario || 'Usuário';
+  document.getElementById('emailPerfil').textContent = user.email || 'Sem email';
+  document.getElementById('dataPerfil').textContent = 'Cadastro: ' + (user.dataCadastro || 'Não informado');
 }
+
 document.getElementById('logoutBtn').addEventListener('click',()=>{
-localStorage.removeItem('usuarioLogado');
-window.location='login.html';
+  localStorage.removeItem('usuarioLogado');
+  window.location='login.html';
+});
+
+const toggleCart = document.getElementById('toggleCart');
+const cartArea = document.getElementById('profileCartArea');
+const cartItems = document.getElementById('profileCartItems');
+const cartTotal = document.getElementById('profileCartTotal');
+const cartCount = document.getElementById('profileCartCount');
+const closeCartProfile = document.getElementById('closeCartProfile');
+const profileCheckout = document.getElementById('profileCheckout');
+
+function formatarMoeda(valor){
+  return valor.toLocaleString('pt-BR',{style:'currency',currency:'BRL'});
+}
+
+function carregarCarrinho(){
+  return JSON.parse(localStorage.getItem('carrinho')) || [];
+}
+
+function salvarCarrinho(carrinho){
+  localStorage.setItem('carrinho', JSON.stringify(carrinho));
+}
+
+function agruparCarrinho(carrinho){
+  const agrupado = [];
+
+  carrinho.forEach(item => {
+    const produtoExistente = agrupado.find(produto => produto.id === item.id);
+
+    if(produtoExistente){
+      produtoExistente.qtd++;
+    }else{
+      agrupado.push({...item, qtd: 1});
+    }
+  });
+
+  return agrupado;
+}
+
+function removerProdutoPerfil(idProduto){
+  const carrinho = carregarCarrinho();
+  const index = carrinho.findIndex(item => item.id === idProduto);
+
+  if(index !== -1){
+    carrinho.splice(index, 1);
+    salvarCarrinho(carrinho);
+    renderProfileCart();
+  }
+}
+
+function renderProfileCart(){
+  const carrinho = carregarCarrinho();
+  const produtosAgrupados = agruparCarrinho(carrinho);
+  const total = carrinho.reduce((soma,item)=> soma + item.price, 0);
+
+  cartCount.textContent = carrinho.length;
+  cartTotal.textContent = formatarMoeda(total);
+
+  if(carrinho.length === 0){
+    cartItems.innerHTML = '<p class="profile-empty">Carrinho vazio</p>';
+    return;
+  }
+
+  cartItems.innerHTML = produtosAgrupados.map(item => `
+    <div class="profile-cart-row">
+      <div class="profile-product">
+        <img src="../../${item.image}" alt="${item.title}">
+        <p>${item.title}</p>
+      </div>
+      <span class="profile-price">${formatarMoeda(item.price)}</span>
+      <span class="profile-qty">${item.qtd}</span>
+      <i class="fa-solid fa-trash profile-remove" onclick="removerProdutoPerfil(${item.id})" title="Remover uma unidade"></i>
+    </div>
+  `).join('');
+}
+
+toggleCart.addEventListener('click',()=>{
+  cartArea.classList.toggle('ativo');
+  if(cartArea.classList.contains('ativo')) renderProfileCart();
+});
+
+closeCartProfile.addEventListener('click',()=>{
+  cartArea.classList.remove('ativo');
+});
+
+profileCheckout.addEventListener('click',()=>{
+  const carrinho = carregarCarrinho();
+
+  if(carrinho.length === 0){
+    alert('Seu carrinho está vazio.');
+    return;
+  }
+
+  alert('Compra finalizada com sucesso!');
+  salvarCarrinho([]);
+  renderProfileCart();
 });
 </script>
-</body></html>
+</body>
+</html>

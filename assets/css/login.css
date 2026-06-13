@@ -3,7 +3,7 @@
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background: linear-gradient(90deg,  #000000,   #ffe600);
+    background-color: #333;
 }
 
 .sl-container {
@@ -212,9 +212,6 @@
     background: linear-gradient(90deg,  #ffe600, #000000); 
 }
 
-.body-sl.active-bg {
-    background: linear-gradient(90deg, #ffe600, #000000);
-}
 
 .linha-dupla {
   display: flex;
