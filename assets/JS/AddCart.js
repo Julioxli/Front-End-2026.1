@@ -128,8 +128,19 @@ function renderProducts() {
 }
 
 function addtocart(index) {
+  const usuarioLogado = JSON.parse(localStorage.getItem("usuarioLogado"));
+
+  if (!usuarioLogado) {
+
+    window.location.href = "assets/pages/login.html";
+
+    return;
+  }
+
   cart.push({ ...product[index] });
+
   salvarCarrinho();
+
   displaycart();
 }
 
