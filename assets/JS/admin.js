@@ -19,16 +19,21 @@ document.addEventListener('DOMContentLoaded', () => {
 
     usuarios.forEach(user => {
 
-        const div = document.createElement('div');
+    const linha = document.createElement('tr');
 
-        div.innerHTML = `
-            <p><strong>Nome:</strong> ${user.usuario}</p>
-            <p><strong>Email:</strong> ${user.email}</p>\n            <p><strong>Cadastro:</strong> ${user.dataCadastro || "Não informado"}</p>
-            <button onclick="excluirUsuario(${user.id})">Excluir</button>
-            <hr>
-        `;
+    linha.innerHTML = `
+        <td>${user.id}</td>
+        <td>${user.usuario}</td>
+        <td>${user.email}</td>
+        <td>${user.dataCadastro || "Não informado"}</td>
+        <td>
+            <button class="excluir" onclick="excluirUsuario(${user.id})">
+                Excluir
+            </button>
+        </td>
+    `;
 
-        lista.appendChild(div);
+    lista.appendChild(linha);
     });
 
 });
