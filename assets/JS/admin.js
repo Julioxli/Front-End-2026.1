@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (!usuarioLogado || !usuarioLogado.admin) {
         alert('Acesso negado');
-        window.location.href = "../../Index.html";
+        window.location.href = "../../index.html";
         return;
     }
 
